@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Convite Especial</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <!-- Página Inicial -->
+        <div id="pagina-inicial" class="pagina">
+            
+            <h1>Você está convidado!</h1>
+           <p>Com alegria no coração, convido você para celebrar comigo o meu Chá de Panela! Uma oportunidade de reunir amigos e familiares em um evento cheio de risos, carinho e muita diversão. Será um dia especial, repleto de memórias que desejo compartilhar com você! </p> <br>
+
+            <p>Sua presença será o maior presente, e espero contar com você para tornar esse momento ainda mais inesquecível.</p>
+            <button id="btn-lista-presentes" class="btn">Ver Lista de Presentes</button>
+        </div>
+
+        <!-- Lista de Presentes -->
+        <div id="lista-presentes" class="pagina escondido">
+            <h2>Lista de Presentes</h2>
+            <div id="cores-sugeridas" class="cores-sugeridas">
+   
+    
+                <span style="color: #666; padding: 2px;">Preferência de Cores:</span>
+                <span class="bolinha" style="background-color: #deb887;" title="Amadeirado"></span>
+                <span class="bolinha" style="background-color: #F5F5DC;" title="Beige"></span>
+                <span class="bolinha" style="background-color: #FFFFFF;" title="Branco"></span>
+                <span class="bolinha" style="background-color: #D3D3D3;" title="Cinza claro"></span>
+            </div>
+            <p style="padding: 10px;">Selecione os presentes que deseja dar:</p>
+            
+            <div class="controles">
+                <button id="btn-voltar" class="btn">Voltar</button>
+                <div class="info-reserva">
+                    <span id="info-reserva"></span>
+                </div>
+            </div>
+            
+            <div id="container-presentes" class="container-presentes">
+                <!-- Itens serão carregados via JavaScript -->
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+    
+
+</body>
+</html>
