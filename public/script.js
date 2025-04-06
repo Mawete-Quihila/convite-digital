@@ -95,7 +95,7 @@ document.addEventListener('DOMContentLoaded', function () {
                     'Content-Type': 'application/json',
                 },
                 /*body: JSON.stringify({ presente_id: id })*/
-                body: JSON.stringify({ id })
+                body: JSON.stringify({ presente_id: id })
             });
 
             if (response.ok) {
@@ -128,7 +128,7 @@ document.addEventListener('DOMContentLoaded', function () {
         presentes.forEach(presente => {
             const item = document.createElement('div');
             item.className = 'item-presente';
-            item.dataset.id = presente.id;
+            item.dataset.id = presentes.id;
 
             if (reservas.includes(presentes.id)) {
                 item.classList.add('reservado');
