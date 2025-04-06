@@ -1,4 +1,4 @@
-document.addEventListener('DOMContentLoaded', function () {
+/*document.addEventListener('DOMContentLoaded', function () {
     // Elementos da DOM
     const paginaInicial = document.getElementById('pagina-inicial');
     const listaPresentes = document.getElementById('lista-presentes');
@@ -77,7 +77,7 @@ document.addEventListener('DOMContentLoaded', function () {
         try {
             const response = await fetch(`${API_URL}/api/reservas`);
             const data = await response.json();
-            reservas = data.map(r => r.presentes_id);
+            reservas = data.map(r => r.presente_id);
             carregarListaPresentes();
             atualizarInfoReserva();
         } catch (error) {
@@ -94,7 +94,6 @@ document.addEventListener('DOMContentLoaded', function () {
                 headers: {
                     'Content-Type': 'application/json',
                 },
-                /*body: JSON.stringify({ presente_id: id })*/
                 body: JSON.stringify({ presente_id: id })
             });
 
@@ -128,14 +127,14 @@ document.addEventListener('DOMContentLoaded', function () {
         presentes.forEach(presente => {
             const item = document.createElement('div');
             item.className = 'item-presente';
-            item.dataset.id = presentes.id;
+            item.dataset.id = presente.id;
 
-            if (reservas.includes(presentes.id)) {
+            if (reservas.includes(presente.id)) {
                 item.classList.add('reservado');
             }
 
             item.innerHTML = `
-                <div class="nome-presente">${presentes.nome}</div>
+                <div class="nome-presente">${presente.nome}</div>
             `;
 
             item.addEventListener('click', () => reservarPresente(presente.id));
@@ -162,9 +161,9 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // Inicialização
     carregarReservas();
-});
+});*/
 
-/*document.addEventListener('DOMContentLoaded', function () {
+document.addEventListener('DOMContentLoaded', function () {
     const paginaInicial = document.getElementById('pagina-inicial');
     const listaPresentes = document.getElementById('lista-presentes');
     const btnListaPresentes = document.getElementById('btn-lista-presentes');
@@ -174,8 +173,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     const API_URL = 'https://convite-digital-api.onrender.com/api';
 
-    let presentes = [ 
-        { id: 1, nome: "Jogo de pratos fundos e rasos" },
+    let presentes = [ { id: 1, nome: "Jogo de pratos fundos e rasos" },
         { id: 2, nome: "Jogo de pratos e copos de sobremesa" },
         { id: 3, nome: "Pirex " },
         { id: 4, nome: "Boleiro de vidro " },
@@ -340,5 +338,5 @@ document.addEventListener('DOMContentLoaded', function () {
             atualizarInfoReserva();
         });
     });
-});*/
+});
 
