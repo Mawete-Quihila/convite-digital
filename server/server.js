@@ -52,17 +52,31 @@ const routes = require('./routes');
 const app = express();
 const PORT = process.env.PORT || 3000;
 
+// Inicializa o banco
 initializeDatabase();
 
-app.use(cors({ origin: 'https://convite-digital-front.onrender.com' }));
-app.use(express.json());
-app.use(express.static(path.join(__dirname, '../public')));
-app.use('/api', routes); // <-- prefixo comum às rotas
+// Middleware de CORS — aceita o front hospedado no Render
+app.use(cors({
+    origin: 'https://convite-digital-front.onrender.com',
+    methods: ['GET', 'POST', 'DELETE'],
+    allowedHeaders: ['Content-Type', 'Authorization']
+}));
 
+// Middleware para ler JSON do corpo das requisições
+app.use(express.json());
+
+// Servir arquivos estáticos do front-end
+app.use(express.static(path.join(__dirname, '../public')));
+
+// Rotas da API
+app.use('/api', routes);
+
+// Fallback para SPA — redireciona qualquer rota desconhecida pro index
 app.get('*', (req, res) => {
     res.sendFile(path.join(__dirname, '../public/index.html'));
 });
 
+// Inicia o servidor
 app.listen(PORT, () => {
     console.log(`Servidor rodando na porta ${PORT}`);
 });
