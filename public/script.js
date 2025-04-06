@@ -1,4 +1,4 @@
-/*document.addEventListener('DOMContentLoaded', function () {
+document.addEventListener('DOMContentLoaded', function () {
     // Elementos da DOM
     const paginaInicial = document.getElementById('pagina-inicial');
     const listaPresentes = document.getElementById('lista-presentes');
@@ -94,7 +94,8 @@
                 headers: {
                     'Content-Type': 'application/json',
                 },
-                body: JSON.stringify({ presente_id: id })
+                /*body: JSON.stringify({ presente_id: id })*/
+                body: JSON.stringify({ id })
             });
 
             if (response.ok) {
@@ -161,9 +162,9 @@
 
     // Inicialização
     carregarReservas();
-});*/
+});
 
-document.addEventListener('DOMContentLoaded', function () {
+/*document.addEventListener('DOMContentLoaded', function () {
     const paginaInicial = document.getElementById('pagina-inicial');
     const listaPresentes = document.getElementById('lista-presentes');
     const btnListaPresentes = document.getElementById('btn-lista-presentes');
@@ -339,5 +340,5 @@ document.addEventListener('DOMContentLoaded', function () {
             atualizarInfoReserva();
         });
     });
-});
+});*/
 
