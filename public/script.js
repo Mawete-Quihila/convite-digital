@@ -77,7 +77,7 @@ document.addEventListener('DOMContentLoaded', function () {
         try {
             const response = await fetch(`${API_URL}/api/reservas`);
             const data = await response.json();
-            reservas = data.map(r => r.presente_id);
+            reservas = data.map(r => r.presentes_id);
             carregarListaPresentes();
             atualizarInfoReserva();
         } catch (error) {
@@ -130,12 +130,12 @@ document.addEventListener('DOMContentLoaded', function () {
             item.className = 'item-presente';
             item.dataset.id = presente.id;
 
-            if (reservas.includes(presente.id)) {
+            if (reservas.includes(presentes.id)) {
                 item.classList.add('reservado');
             }
 
             item.innerHTML = `
-                <div class="nome-presente">${presente.nome}</div>
+                <div class="nome-presente">${presentes.nome}</div>
             `;
 
             item.addEventListener('click', () => reservarPresente(presente.id));
