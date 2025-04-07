@@ -94,7 +94,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 headers: {
                     'Content-Type': 'application/json',
                 },
-                body: JSON.stringify({ presente_id: id, nome_convidado: "Anônimo" })
+                body: JSON.stringify({ id: id, nome_convidado: "Anônimo" })
             });
 
             if (response.ok) {
