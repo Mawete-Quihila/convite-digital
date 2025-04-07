@@ -128,7 +128,7 @@ router.delete('/reset', (req, res) => {
   router.get('/reservas', (req, res) => {
       db.all("SELECT presente_id FROM reservas", (err, rows) => {
           if (err) return res.status(500).json({ error: err.message });
-          const reservas = rows.map(row => row.presente_id);
+          const reservas = rows.map(row => row.id);
           res.json(reservas);
       });
   });
