@@ -72,6 +72,7 @@ document.addEventListener('DOMContentLoaded', function () {
     ];
 
     let reservas = [];
+    
 
     async function carregarReservas() {
         try {
